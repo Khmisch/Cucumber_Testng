@@ -1,7 +1,9 @@
 package StepsDefinitions;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,11 +14,28 @@ public class Steps {
     @Before
     public void setUp(){
         System.out.println("==============================================");
+        System.out.println("Before Hook");
+        System.out.println("----------------------------------------------");
+    }
+
+    @BeforeStep
+    public void stepSetUp(){
+        System.out.println("**********************************************");
+        System.out.println("Before Step");
     }
 
     @After
     public void tearDown(){
+        System.out.println("----------------------------------------------");
+        System.out.println("After Hook");
         System.out.println("==============================================");
+    }
+
+    @AfterStep
+    public void stopTearDown(){
+        System.out.println("After Step");
+        System.out.println("**********************************************");
+
     }
 
     @Given("the user is on login page")
@@ -56,13 +75,13 @@ public class Steps {
         System.out.println("The company logo is present in the login form");
     }
 
-    @When("he enters user id as {string}")
-    public void heEntersUserIdAs(String str) {
-        System.out.println("The user ID is :: " + str);
+    @When("the user clicks on Forgot Username")
+    public void theUserClicksOnForgotUsername() {
+        System.out.println("The user clicked on Forgot Username link ::::::::::");
     }
 
-    @And("he enters user password as {string}")
-    public void heEntersUserPasswordAs(String str) {
-        System.out.println("The user password is :: " + str);
+    @Then("the user should be navigated to the first page of forgot username flow")
+    public void theUserShouldBeNavigatedToTheFirstPageOfForgotUsernameFlow() {
+        System.out.println("The user is on verify email address page to recover password");
     }
 }

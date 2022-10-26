@@ -11,6 +11,6 @@ Feature: Login with multiple data
     Examples:
     | user |password |
     |  u1  |  abc123 |
-    |  u2  |  xyz123 |
-    |  u3  |  abc321 |
-    |  u4  |  xyz321 |
+#    |  u2  |  xyz123 |
+#    |  u3  |  abc321 |
+#    |  u4  |  xyz321 |
